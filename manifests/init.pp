@@ -44,7 +44,7 @@ class nova(
   $rabbit_port='5672',
   $rabbit_userid='guest',
   $rabbit_virtual_host='/',
-  # qpid_hostname = 'localhost',
+  $qpid_hostname = 'localhost',
   $qpid_port = '5672',
   $qpid_username = 'guest',
   $qpid_password = 'guest',
@@ -189,6 +189,7 @@ class nova(
   }
 
   if $rpc_backend == 'nova.openstack.common.rpc.impl_qpid' {
+foo
     nova_config {
       'DEFAULT/qpid_hostname':               value => $qpid_hostname;
       'DEFAULT/qpid_port':                   value => $qpid_port;
